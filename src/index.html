@@ -1,0 +1,315 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- ADD LINKEDIN STYLESHEET URL HERE -->
+    <link rel="stylesheet" href="https://mcwb9f4s0cnm2-v7frpfj5yprx81.pub.sfmc-content.com/e05dmaj31vv"/>
+    <!-- ADD LINKEDIN STYLESHEET URL HERE ^^^ -->
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Final - LinkedIn UI Clonde</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- Header Starts -->
+    <div class="header">
+      <div class="header__nav">
+        <div class="header__left">
+          <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 34 34" class="global-nav__logo">
+            <title>LinkedIn</title>
+
+            <g>
+              <path d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z" fill="#0c67c2"></path>
+            </g>
+          </svg>
+          <div class="header__search">
+            <i class="material-icons"> search </i>
+            <input type="text" placeholder="Search"/>
+          </div>
+        </div>
+
+        <div class="header__right">
+          <div class="header__option active">
+            <i class="material-icons header__option--icon"> home </i>
+            <h3>Home</h3>
+          </div>
+          <div class="header__option">
+            <i class="material-icons header__option--icon"> supervisor_account </i>
+            <h3>My Network</h3>
+          </div>
+          <div class="header__option">
+            <i class="material-icons header__option--icon"> business_center </i>
+            <h3>Jobs</h3>
+          </div>
+          <div class="header__option">
+            <i class="material-icons header__option--icon"> chat </i>
+            <h3>Messaging</h3>
+          </div>
+          <div class="header__option">
+            <i class="material-icons header__option--icon"> notifications </i>
+            <h3>Notifications</h3>
+          </div>
+          <div class="header__option">
+            <div class="account__avatar">
+              <div class="account__avatar--img"></div>
+              <!--<div class="account__details">R</div>-->
+            </div>
+            <h3>Me</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Ends -->
+
+    <!-- Main Body Starts -->
+    <div class="body__main">
+      <!-- Sidebar Starts -->
+      <div class="sidebar">
+        <div class="sidebar__top libd">
+          <img src="https://static-exp1.licdn.com/sc/h/55k1z8997gh8dwtihm11aajyq" alt="" />
+          <div class="account__avatar">
+            <div class="account__avatar--img"></div>
+            <!--<div class="account__details">R</div>-->
+          </div>
+          <h2>Rachel Morris</h2>
+          <h4>rachel.morris@gmail.com</h4>
+        </div>
+
+        <div class="sidebar__stats libd">
+          <div class="sidebar__stat">
+            <p>Who Viewed You</p>
+            <p class="sidebar__stat--number">2,453</p>
+          </div>
+          <div class="sidebar__stat">
+            <p>Views on post</p>
+            <p class="sidebar__stat--number">2,650</p>
+          </div>
+        </div>
+
+        <div class="sidebar__bottom libd">
+          <p>Recent</p>
+          <div class="sidebar__recent--item">
+            <span class="sidebar__hash">#</span>
+            <p>reactjs</p>
+          </div>
+          <div class="sidebar__recent--item">
+            <span class="sidebar__hash">#</span>
+            <p>programming</p>
+          </div>
+          <div class="sidebar__recent--item">
+            <span class="sidebar__hash">#</span>
+            <p>softwareengineering</p>
+          </div>
+          <div class="sidebar__recent--item">
+            <span class="sidebar__hash">#</span>
+            <p>design</p>
+          </div>
+          <div class="sidebar__recent--item">
+            <span class="sidebar__hash">#</span>
+            <p>developer</p>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar Ends -->
+
+      <!-- Feed Starts -->
+      <div class="feed">
+        <div class="feed__input--container libd">
+          <div class="feed__input--wrapper">
+            <div class="account__avatar">
+              <div class="account__avatar--img"></div>
+              <!--<div class="account__details">R</div>-->
+            </div>
+            <form class="feed__input">
+              <input type="text" placeholder="Start a post"/>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+
+          <div class="feed__input--options">
+            <div class="input__option">
+              <i style="color: #70b5f9" class="material-icons"> insert_photo </i>
+              <h4>Photo</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: #7fc15e" class="material-icons"> subscriptions </i>
+              <h4>Video</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: #e7a33e" class="material-icons"> event_note </i>
+              <h4>Event</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: #fc9295" class="material-icons"> calendar_view_day </i>
+              <h4>Write Article</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post Starts 1-->
+        <div class="post libd promoted">
+          <div class="post__header">
+            <div class="post__brand">
+              <img src="https://cumulusfinserv.herokuapp.com/images/social/facebook/cumulus-cloud-logo.png" />
+            </div>
+            <div class="post__info">
+              <h2 class="promoted__name">Cumulus Financial</h2>
+              <p>Promoted</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <div class="post__message">
+              <p>What non-financial benefits could a new job offer that would get you to take a pay cut?</p>
+            </div>
+            <div class="post__creative post__video">
+              <!--<video class="js_post__video post__video--style hidden" autoplay="" loop=""><source class="video__src" src="https://dms.licdn.com/playlist/C4D05AQEW4qrfrHHBeQ/mp4-720p-30fp-crf28/0/1649099799212?e=2147483647&v=beta&t=CcX0HGHwZK49oq81-Ob2ndv1iu-jYrWjCiZSWvoHC-I" type="video/mp4"></video>-->
+              <img class="post__img" src="https://cumulusfinserv.herokuapp.com/images/social/facebook/post-wealth.png"/>
+            </div>
+            <div class="post__summary">
+              <span class="post__copy">
+                <p>What is non-financial benefits could a new job offer that would get you to take a pay cut?</p>
+                <span class="post__cta--container">
+                  <button class="post__cta"><a href="https://cumulusfinserv.com/">Learn more</a></button>
+                </span>
+              </span>
+              <span class="post__brand--url">cumulusfinancial.com</span>
+            </div>
+          </div>
+          <div class="post__cta--container hidden">
+            <div class="post__cta--action">
+              <div>Sign Up</div>
+            </div>
+          </div>
+          <div class="post__engagement--container">
+            <div class="post__engagement--metrics">
+              <img class="" src="https://static-exp1.licdn.com/sc/h/8ekq8gho1ruaf8i7f86vd1ftt" alt="like">
+              <span class="linkedin__engagement">#</span>
+            </div>
+            <div class="post__engagement--ampiflications">
+              <span class="post__engagement--comment">
+                <span class="linkedin__engagement">#</span> 
+                comments</span>
+              <span class="post__engagement--shares">
+                <span class="linkedin__engagement">#</span> shares
+              </span>
+            </div>
+          </div>
+          <div class="feed__input--options">
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends 1-->
+
+        <!-- Post Starts 2-->
+        <div class="post libd">
+          <div class="post__header">
+            <div class="account__avatar">
+              <div class="account__details">J</div>
+            </div>
+            <div class="post__info">
+              <h2 class="random__name">John Smith</h2>
+              <p>Job Description</p>
+            </div>
+          </div>
+
+          <div class="post__body">
+            <div class="post__message">
+              <p>Freddie Mac is hosting a CreditSmart live virtual event on April 19th, where renters, homebuyers, homeowners and housing professionals can learn about the unique challenges facing communities and how personalized tools can help them achieve financial goals.</p>
+            </div>
+            <div class="post__creative">
+              <img src="https://picsum.photos/560?random=3"/>
+            </div>
+            <div class="post__summary">
+              <p>What non-financial benefits could a new job offer that would get you to take a pay cut?</p>
+            </div>
+          </div>
+
+
+
+
+          <div class="feed__input--options">
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> thumb_up </i>
+              <h4>Like</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> comment </i>
+              <h4>Comment</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> share </i>
+              <h4>Share</h4>
+            </div>
+            <div class="input__option">
+              <i style="color: gray" class="material-icons"> send </i>
+              <h4>Send</h4>
+            </div>
+          </div>
+        </div>
+        <!-- Post Ends 2-->
+
+      </div>
+      <!-- Feed Ends -->
+
+      <!-- Widgets Starts -->
+      <div class="widgets libd">
+        <div class="widgets__header">
+          <h2>LinkedIn Clone</h2>
+          <i class="material-icons"> info </i>
+        </div>
+        <div class="widgets__article">
+          <div class="widgets__article--left">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__article--right">
+            <h4>Coding LinkedIn Clone</h4>
+            <p>Top news - 4500 readers</p>
+          </div>
+        </div>
+
+        <div class="widgets__article">
+          <div class="widgets__article--left">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__article--right">
+            <h4>Coding LinkedIn Clone</h4>
+            <p>Top news - 4500 readers</p>
+          </div>
+        </div>
+
+        <div class="widgets__article">
+          <div class="widgets__article--left">
+            <i class="material-icons"> fiber_manual_record </i>
+          </div>
+          <div class="widgets__article--right">
+            <h4>Coding LinkedIn Clone</h4>
+            <p>Top news - 4500 readers</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Widgets Ends -->
+    </div>
+    <!-- Main Body Ends -->
+  </body>
+</html>

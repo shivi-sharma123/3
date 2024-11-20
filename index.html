@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Sidebar, Header, and Profile Section</title>
+  <style>
+    /* General Styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      height: 100vh;
+      background-color: #f9f9f9;
+      overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 260px;
+      background: linear-gradient(to bottom, #4b6ef5, #5a8df7);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 15px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      transition: width 0.3s;
+    }
+
+    .sidebar:hover {
+      width: 280px;
+    }
+
+    .sidebar .logo {
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      transition: transform 0.3s;
+    }
+
+    .sidebar ul li:hover {
+      transform: translateX(10px);
+    }
+
+    .sidebar ul li a {
+      font-size: 16px;
+      color: #f1f1f1;
+      padding: 10px;
+      border-radius: 8px;
+      display: block;
+      transition: background-color 0.3s;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .sidebar ul li .submenu {
+      margin-left: 20px;
+    }
+
+    .sidebar ul li .submenu a {
+      font-size: 14px;
+    }
+
+    .theme-switch {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .theme-switch button {
+      border: none;
+      background-color: white;
+      color: #4b6ef5;
+      padding: 5px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .theme-switch button:hover {
+      background-color: #ff66cc;
+      color: white;
+    }
+
+    /* Header Styling */
+    .header {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header .top-bar .search-bar {
+      flex: 1;
+      margin: 0 20px;
+      position: relative;
+    }
+
+    .header .top-bar .search-bar input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      background: linear-gradient(to right, #e8f4ff, #fefeff);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    .header .top-bar .search-bar input:focus {
+      outline: none;
+      border-color: #4b6ef5;
+      box-shadow: 0 0 10px rgba(75, 110, 245, 0.5);
+    }
+
+    .header .top-bar .profile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #4b6ef5;
+      border-radius: 50%;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .header .top-bar .profile:hover {
+      transform: scale(1.1);
+    }
+
+    /* Profile Section */
+    .profile-section {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+    }
+
+    .profile-header {
+      background: linear-gradient(to right, #d8e8ff, #f5faff);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .profile-header img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+    }
+
+    .profile-header .details {
+      flex: 1;
+    }
+
+    .profile-header .details h1 {
+      margin: 0;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .profile-header .details p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: #666;
+    }
+
+    .profile-content {
+      padding: 20px;
+    }
+
+    .profile-content .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .profile-content .buttons button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: #4b6ef5;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-content .buttons button:hover {
+      background-color: #375adb;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">BSB</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Posts</a></li>
+      <li>
+        <a href="#">Club</a>
+        <ul class="submenu">
+          <li><a href="#">Technology and Innovation Clubs</a></li>
+          <li><a href="#">Coding Club</a></li>
+          <li><a href="#">Robotics Club</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Language and Literature Clubs</a></li>
+    </ul>
+    <div class="theme-switch">
+      <button>Light</button>
+      <button>Dark</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="header">
+    <div class="top-bar">
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="profile">P W</div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-header">
+        <img src="https://via.placeholder.com/90" alt="Profile">
+        <div class="details">
+          <h1>OSCode Banasthali Vidyapith Chapter</h1>
+          <p>133 Followers • 59 Connections</p>
+        </div>
+      </div>
+      <div class="profile-content">
+        <p>
+          OSCode is a passionate community of coders, developers, and open-source contributors.
+        </p>
+        <div class="buttons">
+          <button>View Profile</button>
+          <button>Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Layout</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f6fa;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Sidebar Styling */
+    .sidebar {
+      width: 280px;
+      background: #fff;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: fixed;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .sidebar .logo {
+      font-size: 26px;
+      font-weight: bold;
+      text-align: center;
+      background: linear-gradient(to right, #4b6ef5, #ff66cc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      margin-top: 20px;
+    }
+
+    .sidebar ul li {
+      margin-bottom: 15px;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #333;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #f0f4ff;
+      color: #4b6ef5;
+    }
+
+    .sidebar ul li .submenu {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .sidebar ul li .submenu li {
+      margin-bottom: 10px;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-left: 280px;
+      width: calc(100% - 280px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Header Styling */
+    .header {
+      background: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header .search-bar {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header .search-bar input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .header .actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .header .actions div {
+      width: 40px;
+      height: 40px;
+      background: #4b6ef5;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    /* Profile Section */
+    .profile-section {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-section .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+
+    .profile-section .profile-header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #4b6ef5;
+    }
+
+    .profile-section .profile-header .details {
+      flex: 1;
+    }
+
+    .profile-section .profile-header .details h1 {
+      font-size: 22px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .profile-section .profile-header .details p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .profile-section .profile-content {
+      padding-top: 20px;
+    }
+
+    .profile-section .profile-content .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .profile-section .profile-content .buttons button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #4b6ef5;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-section .profile-content .buttons button:hover {
+      background-color: #375adb;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 200px;
+      }
+
+      .main-content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+      }
+
+      .header .search-bar input {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+      }
+
+      .header {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">BSB</div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Profile</a></li>
+      <li><a href="#">Posts</a></li>
+      <li>
+        <a href="#">Club</a>
+        <ul class="submenu">
+          <li><a href="#">Technology Clubs</a></li>
+          <li><a href="#">Coding Club</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Settings</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header">
+      <div class="search-bar">
+        <input type="text" placeholder="Search">
+      </div>
+      <div class="actions">
+        <div>P</div>
+        <div>W</div>
+      </div>
+    </div>
+
+    <!-- Profile Section -->
+    <div class="profile-section">
+      <div class="profile-header">
+        <img src="https://via.placeholder.com/80" alt="Profile Picture">
+        <div class="details">
+          <h1>OSCode Banasthali Vidyapith Chapter</h1>
+          <p>133 Followers • 59 Connections</p>
+        </div>
+      </div>
+      <div class="profile-content">
+        <p>OSCode is a passionate community of coders, developers, and contributors...</p>
+        <div class="buttons">
+          <button>View Profile</button>
+          <button>Message</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
